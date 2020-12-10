@@ -1,11 +1,14 @@
 package com.unita.heistit
 
 import android.content.ClipData
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -14,6 +17,7 @@ import com.android.volley.toolbox.Volley
 import com.unita.heistit.adapters.featured_items_adapter
 import com.unita.heistit.models.featured_items
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.featured_items.view.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         var url="http://192.168.100.201/HeistIt/get_categories.php"
         var rq:RequestQueue=Volley.newRequestQueue(this)
         var list=ArrayList<featured_items>()
+
         var jar=JsonArrayRequest(Request.Method.GET,url, null, {
             response ->
             for (x in 0..response.length()-1)
@@ -30,10 +35,13 @@ class MainActivity : AppCompatActivity() {
                         response.getJSONObject(x).getInt("id"),
                                 response.getJSONObject(x).getString("name"),
                                         response.getJSONObject(x).getDouble("priceRangeMin"),
-                                                response.getJSONObject(x).getString("image" )
+                                                response.getJSONObject(x).getString("image" ),
+
 
                 ))
+
             }
+
             var adp=featured_items_adapter(this, list)
             rv_featured_items.layoutManager=LinearLayoutManager(this)
             rv_featured_items.adapter=adp
@@ -43,7 +51,18 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, error.message,Toast.LENGTH_LONG).show()
                 },
         )
+
         rq.add(jar)
+
+
+
+
+
+
+
+
+
+
 
     }
 }

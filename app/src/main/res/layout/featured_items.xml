@@ -42,4 +42,10 @@
         android:text="Price"
         android:textColor="@color/purple_700"
         android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_id_featured_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="id" />
 </LinearLayout>
