@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.unita.heistit.ItemsActivity
 import com.unita.heistit.R
+import com.unita.heistit.UserSession
 import com.unita.heistit.models.featured_items
 import kotlinx.android.synthetic.main.featured_items.view.*
 
@@ -45,8 +46,9 @@ class featured_items_adapter(var context: Context, var list: ArrayList<featured_
            Picasso.with(itemView.context).load(u).into(itemView.iv_items_featured)
            itemView.iv_items_featured.setOnClickListener()
            {
+               UserSession.featured_items_id=featured_items_id
                var intent = Intent(itemView.getContext(), ItemsActivity::class.java)
-               intent.putExtra("Id", itemView.tv_id_featured_items.text)
+               intent.putExtra("Id", itemView.tv_name_featured_items.text)
                itemView.getContext().startActivity(intent)
            }
 

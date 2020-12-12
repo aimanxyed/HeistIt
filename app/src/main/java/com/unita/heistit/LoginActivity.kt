@@ -42,32 +42,6 @@ class LoginActivity : AppCompatActivity() {
             rq.add(sr)
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         tv_signup.setOnClickListener {
             var i = Intent(this, RegisterActivity::class.java)
             startActivity(i)
