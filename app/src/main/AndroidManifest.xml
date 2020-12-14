@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HeistIt">
-        <activity android:name=".OrderActivity"></activity>
+        <activity android:name=".TotalActivity"></activity>
+        <activity android:name=".OrderActivity" />
         <activity android:name=".ItemsActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />

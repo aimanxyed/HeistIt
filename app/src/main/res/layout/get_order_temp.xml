@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name_order_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="NAME"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_menus_name_order_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="MENUS NAME"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_price_order_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="PRICE"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_quantity_order_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="QUANTITY"
+        android:textSize="24sp" />
+</LinearLayout>
